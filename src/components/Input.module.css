@@ -1,0 +1,19 @@
+.inp,
+.textarea {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  align-self: center;
+  color: #4c4c56;
+  resize: none;
+  width: 100%;
+  border-radius: 3px;
+  transition: 200ms ease all;
+  border: none;
+  box-shadow: 0 12px 35px 0 rgba(16, 39, 112, .25);
+  position: relative;
+  font-weight: 400;
+  font-size: 1.2rem;
+  height: 45px;
+}

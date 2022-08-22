@@ -1,0 +1,31 @@
+.input_form{
+    display: flex;
+    background: #03a9f4;
+    justify-content: center;
+}
+
+.post_item{
+    align-items:center;
+    background: azure;
+    border: 2px solid black;
+    display:flex;
+    justify-content:space-between;
+    margin:10px;
+    padding:15px;
+}
+
+.result_box{
+    background: #ffc107;
+}
+
+.posts_wraper{
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.span_x{
+    cursor: pointer;
+    padding: 5px;
+}
