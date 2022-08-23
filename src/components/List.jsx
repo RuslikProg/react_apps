@@ -1,4 +1,5 @@
 import React from 'react';
+import Icon from './Icon';
 import Text from './Text'
 
 const List = ({state,dispatch,classes,}) => {
@@ -14,7 +15,7 @@ const List = ({state,dispatch,classes,}) => {
       localStorage.setItem('toDoList', JSON.stringify([
         ...state.data.filter( item => item.id !== +e.target.id) || []
       ]));
-   } catch (error) {
+   }catch (error) {
       console.log(error)
    }
   }
@@ -25,15 +26,21 @@ const List = ({state,dispatch,classes,}) => {
             {state.data.map((post, index)=>{
               return  <div className={classes.post_item} key={index}>
                           <div>{post.id}. {post.data}</div>
-                            <span id={post.id} 
-                                onClick={e=>deletePost(e)} 
-                                className={classes.span_x}>
-                                  X
-                            </span>
+                            
+                                  <Icon
+                                    className={classes.span_x}
+                                    id={post.id}
+                                    onClick={e=>deletePost(e)} 
+                                    icon='clear'
+                                    color='red'
+                                    sire={24}
+                                  />
+                            
                       </div>})}  
-      </div> 
+          </div> 
           :
-          <Text text={'No toDo now'}/>}
+          <Text text={'No toDo now'}/>
+          }
     </div>
   )
 }

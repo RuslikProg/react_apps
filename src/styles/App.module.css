@@ -2,11 +2,12 @@
     display: flex;
     background: #03a9f4;
     justify-content: center;
+    
 }
 
 .post_item{
     align-items:center;
-    background: azure;
+    background: rgb(169, 240, 185);
     border: 2px solid black;
     border-radius: 20px;
     display:flex;
@@ -16,7 +17,7 @@
 }
 
 .result_box{
-    background: #ffc107;
+    background: #be9ff8;
 }
 
 .posts_wraper{

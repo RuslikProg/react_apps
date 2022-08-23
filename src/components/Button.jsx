@@ -1,6 +1,7 @@
 import React,{useState} from 'react';
 import propTypes from 'prop-types';
-import styles from './Button.module.css'
+import styles from '../styles/Button.module.css'
+import Icon from './Icon';
 
 const Button = (props) => {
 
@@ -20,7 +21,6 @@ const Button = (props) => {
     btnColor = 'teal',
     labelColor,
     style
-
   } = props;
 
   const commonStyles = {
@@ -36,7 +36,6 @@ const Button = (props) => {
     color           : labelColor || 'white',
     backgroundColor : btnColor
   };
-
   const roundedStyle = {
     backgroundColor : btnColor,
     color           : labelColor || 'white',
@@ -48,7 +47,7 @@ const Button = (props) => {
     color           : labelColor || 'white',
     opacity         : 0.4
   };
-    const blockStyles = {
+  const blockStyles = {
     width  : '95%',
     margin : '0 auto'
   };
@@ -75,10 +74,10 @@ const Button = (props) => {
       case 'medium':
         btnStyle = mediumBtn;
       break;
-    case 'block':
+      case 'block':
         btnStyle = blockStyles;
       break;
-    case 'outline':
+      case 'outline':
         if(hover){
           btnStyle = outlineHoverStyle;
         }else{
@@ -86,7 +85,7 @@ const Button = (props) => {
         }
       break;
   
-    default:
+      default:
       btnStyle = {
         backgroundColor : btnColor,
         color : labelColor || 'white',
@@ -94,26 +93,55 @@ const Button = (props) => {
       break;
   }
  
+  if(icon){
+    return (
+      <button
+        type={type}
+        onClick={!disabled ? onClick :() => {}}
+        disabled={disabled}
+        labelcolor={labelColor}
+        className={styles.btn}
+        label={label}
+        onMouseEnter={toggleHover}
+        onMouseLeave={toggleHover}
+        style={
+          disabled ?
+            {...commonStyles, ...btnStyle, ...disabledStyle, ...styles}
+            :
+            {...commonStyles, ...btnStyle, ...style}
+        }
+        
+      >
+        <Icon
 
-  return (
-    <button
-      type={type}
-      onClick={!disabled ? onClick :() => {}}
-      disabled={disabled}
-      labelcolor={labelColor}
-      className={styles.btn}
-      label={label}
-      onMouseEnter={toggleHover}
-      onMouseLeave={toggleHover}
-      style={
-        disabled ?  {...commonStyles, ...btnStyle, ...disabledStyle, ...styles}:
-        {...commonStyles, ...btnStyle, ...style}
-      }
-      
-    >
-      {children || label}
-    </button>
-  )
+        />
+        {children || label}
+      </button>
+    )
+  }else{
+    return (
+      <button
+        type={type}
+        onClick={!disabled ? onClick :() => {}}
+        disabled={disabled}
+        labelcolor={labelColor}
+        className={styles.btn}
+        label={label}
+        onMouseEnter={toggleHover}
+        onMouseLeave={toggleHover}
+        style={
+          disabled ?
+            {...commonStyles, ...btnStyle, ...disabledStyle, ...styles}
+            :
+            {...commonStyles, ...btnStyle, ...style}
+        }
+        
+      >
+        {children || label}
+      </button>
+    )
+  }
+
 }
 
 
@@ -124,7 +152,7 @@ Button.defaultProps = {
 Button.propTypes = {
   type: propTypes.string,
   onClick: propTypes.func,
-  icon: propTypes.string,
+  icon: propTypes.bool,
   disable: propTypes.bool,
   color: propTypes.object,
   className: propTypes.string,
@@ -132,8 +160,7 @@ Button.propTypes = {
   style: propTypes.object,
   onMouseEnter: propTypes.func,
   onMouseLeave: propTypes.func,
-  labelcolor : propTypes.string
-
+  labelcolor : propTypes.string,
 };
 
 export default Button;

@@ -1,10 +1,10 @@
-
 import './App.css';
 import React , {useReducer} from 'react';
-import classes from './App.module.css'
 import Bar from './components/Bar';
 import Text from './components/Text';
 import List from './components/List';
+import classes from '../src/styles/App.module.css'
+
 
 
 const key = 'toDoList';
@@ -50,7 +50,7 @@ const App = () => {
         </div>
       <div className='result' style={{background: '#ffc107'}}>
         <Text
-          text={"ToDo list"}
+          text={"To Do list"}
         />
         <List
           state={state}

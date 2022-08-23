@@ -1,22 +1,23 @@
-import React from 'react'
-import Button from './Button'
-import Input from './Input'
+import React from 'react';
+import Button from './Button';
+import Input from './Input';
+
 
 const Bar = ({state, dispatch,}) => {
 
   const onSubmit = (e) => {
     dispatch({
         type: 'addToDo',
-        data: [
+        data:[
             ...state.data,
             {id:state.data.length + 1, data: state.input}
-           ]
+        ]
       })
-     try {
+    try {
         localStorage.setItem('toDoList', JSON.stringify([...state.data, {id:state.data.length + 1, data: state.input}]));
-     } catch (error) {
+    }catch (error) {
         console.log(error)
-     }
+    }
 };
 
   const handlerOnKayDown = (e)=>{
