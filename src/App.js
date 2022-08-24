@@ -1,65 +1,50 @@
 import './App.css';
-import React , {useReducer} from 'react';
-import Bar from './components/Bar';
-import Text from './components/Text';
-import List from './components/List';
-import classes from '../src/styles/App.module.css'
+import React , {useState} from 'react';
+import ToDoTub from './pages/to-do-list/index';
+import WeatherTab from './pages/weather/index';
 
 
 
-const key = 'toDoList';
-const getToDo = JSON.parse(localStorage.getItem(key)) || [];
-const initialState = {
-  input:'',
-  data: getToDo,
-};
-
-function reducer(state, action) {
-  switch (action.type) {
-    case 'onChangeInput':
-      return {
-        ...state,
-        input: action.data,
-      };
-    case 'addToDo':
-      return {
-        input: '',
-        data: action.data,
-      };
-    case 'deleteToDo':
-        return {
-          ...state,
-          data: action.data,
-        };
-    default:
-      throw new Error();
-  }
-}
 
 const App = () => {
-  const [state, dispatch] = useReducer(reducer, initialState);
+const [activTab, setActivTab] = useState('');
 
-
+  const handleTabToDo=()=>{
+    setActivTab('tabToDo')
+  }
+  const handleTabWeather=()=>{
+    setActivTab('tabWeather')
+  }
   return (
     <div className="App">
-        <div className={classes.input_form} >
-            <Bar
-              state={state}
-              dispatch={dispatch}
-            />
+      <div className='container'>
+        <div  className='navbar'>
+          <ul className="nav">
+              <li
+                className={activTab === "tabToDo" ? "active" : ""}
+                onClick={handleTabToDo}
+              >
+              To Do App
+              </li>
+              <li
+                className={activTab === "tabWeather" ? "active" : ""}
+                onClick={handleTabWeather}
+              >
+              Weather App
+              </li>
+          </ul>
         </div>
-      <div className='result' style={{background: '#ffc107'}}>
-        <Text
-          text={"To Do list"}
-        />
-        <List
-          state={state}
-          dispatch={dispatch}
-          classes={classes}
-        />
+       <div >
+            {activTab === "tabToDo" 
+            ?
+            <ToDoTub/> 
+            : 
+            <WeatherTab/>
+            }
+        </div>
       </div>
     </div>
   );
 }
 
-export default App;
+export default (App);

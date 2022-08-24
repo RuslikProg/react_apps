@@ -1,6 +1,6 @@
 import React from 'react';
 import propTypes from 'prop-types';
-import styles from '../styles/Input.module.css'
+import styles from '../styles/Input.module.css';
 
 const Input = (props) => {
 
@@ -9,8 +9,7 @@ const Input = (props) => {
     onChange,
     onKeyDown,
     value,
-
-
+    type,
   } = props;
 
   return (
@@ -20,14 +19,13 @@ const Input = (props) => {
       placeholder={placeholder}
       value={value}
       className={styles.inp}
-       
+      type={type} 
     />
   )
 }
 
 Input.defaultProps = {
   placeholder: 'Insert the value',
-  
 }
 
 Input.propTypes = {
@@ -35,6 +33,7 @@ Input.propTypes = {
   onChange: propTypes.func,
   className: propTypes.string,
   value: propTypes.string,
-  onKeyDown: propTypes.func
+  onKeyDown: propTypes.func,
+  type: propTypes.string,
 }
 export default Input;

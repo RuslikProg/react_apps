@@ -29,10 +29,7 @@ const Bar = ({state, dispatch,}) => {
   }
 
   return (
-    <div style={{
-      display: 'flex',
-      width: '100%'
-    }}>
+    <div >
       <Input
         onChange={handlerChangeInput}
         onKeyDown={handlerOnKayDown} 
@@ -42,8 +39,9 @@ const Bar = ({state, dispatch,}) => {
       /> 
       <Button
         onClick={onSubmit}
-        type='outline'
+        type='block'
         label={'Add to list'}
+        btnColor={'#39A2DB'}
         
       />
     </div>
