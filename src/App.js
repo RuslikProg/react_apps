@@ -7,7 +7,7 @@ import WeatherTab from './pages/weather/index';
 
 
 const App = () => {
-const [activTab, setActivTab] = useState('');
+const [activTab, setActivTab] = useState('tabToDo');
 
   const handleTabToDo=()=>{
     setActivTab('tabToDo')

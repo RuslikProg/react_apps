@@ -1,44 +1,40 @@
 import React from 'react';
 import Button from './Button';
 import Input from './Input';
+import {addToDo, changeInput} from '../pages/to-do-list/reducer'
+import { useSelector, useDispatch } from 'react-redux';
 
+const Bar = () => {
+  const dispatch = useDispatch();
+  const state= useSelector(state => state);
 
-const Bar = ({state, dispatch,}) => {
-
-  const onSubmit = (e) => {
-    dispatch({
-        type: 'addToDo',
-        data:[
-            ...state.data,
-            {id:state.data.length + 1, data: state.input}
-        ]
-      })
-    try {
-        localStorage.setItem('toDoList', JSON.stringify([...state.data, {id:state.data.length + 1, data: state.input}]));
-    }catch (error) {
-        console.log(error)
-    }
+  const handleSubmit = () => {
+    dispatch(addToDo({
+      id: state.toDo.data.length + 1,
+      text: state.toDo.input,
+    }))
+     
 };
 
   const handlerOnKayDown = (e)=>{
-    if(e.key === 'Enter') onSubmit();
+    if(e.key === 'Enter') handleSubmit();
   }
 
   const handlerChangeInput = (e)=>{
-    dispatch({type: 'onChangeInput', data: e.target.value})
+    dispatch(changeInput(e.target.value))
   }
-
+ 
   return (
     <div >
       <Input
         onChange={handlerChangeInput}
         onKeyDown={handlerOnKayDown} 
         placeholder='Entry value' 
-        value={state.input||''} 
+        value={state.toDo.input||''} 
         
       /> 
       <Button
-        onClick={onSubmit}
+        onClick={handleSubmit}
         type='block'
         label={'Add to list'}
         btnColor={'#39A2DB'}
