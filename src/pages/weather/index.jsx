@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import {getWeather} from './weatherThunk'
 
 const Weather = () => {
-  const [locations, setLocations] = useState('london');
+  const [locations, setLocations] = useState('vyshneve');
   
   const handlerOnKayDown = (e)=>{
     if(e.key === 'Enter') getData();
@@ -36,7 +36,7 @@ return(
         <Input
           onKeyDown={handlerOnKayDown} 
           value={locations}
-          placeholder='Insert the location'
+          placeholder='Insert the City'
           onChange={(e) => setLocations(e.target.value)}
         />
         <Button
@@ -87,19 +87,15 @@ return(
           sire={24}
           /> Sunrise :
           {new Date(data?.sys?.sunrise * 1000 ).toLocaleString()}
-          
         </p>
         <p>
         <Icon
-          
           icon='twilighth'
           color='black'
           sire={24}
           /> Sunset :
           {new Date(data?.sys?.sunset * 1000 ).toLocaleString()}
-          
         </p>
-        
       </div>
   </div>
 )
