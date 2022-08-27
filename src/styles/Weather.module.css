@@ -1,1 +1,24 @@
+.App {
+  font-family: 'Ubuntu', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
+}
+
+.search{
+  width: 80%;
+}
+
+.app_data{
+  min-height: 400px;
+  align-items:center;
+  background: rgba(50, 224, 196, 0.15);
+  width: 60%;
+  margin: 3.5rem auto 1.5rem;
+  padding:15px;
+  display: flex;
+  border-radius: 20px;
+  flex-direction: column;
+ 
+}

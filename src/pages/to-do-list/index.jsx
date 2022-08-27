@@ -1,4 +1,3 @@
-import '../../App.css';
 import React  from 'react';
 import Bar from '../../components/Bar';
 import Text from '../../components/Text';
@@ -12,14 +11,14 @@ const ToDo = () => {
   const state= useSelector(state => state);
 
   return (
-    <div className="App" style={{textAlign:'center'}}>
+    <div className={classes.App} style={{textAlign:'center'}}>
         <div className={classes.input_form} >
             <Bar
               state={state}
               dispatch={dispatch}
             />
         </div>
-      <div className='result' >
+      <div className={classes.result} >
         <Text
           text={"To Do list"}
         />

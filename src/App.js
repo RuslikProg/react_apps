@@ -1,9 +1,7 @@
-import './App.css';
 import React , {useState} from 'react';
 import ToDoTub from './pages/to-do-list/index';
 import WeatherTab from './pages/weather/index';
-
-
+import clasess from './styles/App.module.css';
 
 
 const App = () => {
@@ -16,18 +14,18 @@ const [activTab, setActivTab] = useState('tabToDo');
     setActivTab('tabWeather')
   }
   return (
-    <div className="App">
-      <div className='container'>
-        <div  className='navbar'>
-          <ul className="nav">
+    <div className={clasess.App}>
+      <div className={clasess.container}>
+        <div>
+          <ul className={clasess.nav}>
               <li
-                className={activTab === "tabToDo" ? "active" : ""}
+                className={activTab === "tabToDo" ? clasess.active : ""}
                 onClick={handleTabToDo}
               >
               To Do App
               </li>
               <li
-                className={activTab === "tabWeather" ? "active" : ""}
+                className={activTab === "tabWeather" ? clasess.active : ""}
                 onClick={handleTabWeather}
               >
               Weather App

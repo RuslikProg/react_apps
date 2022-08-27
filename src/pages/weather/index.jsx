@@ -13,8 +13,6 @@ const Weather = () => {
     if(e.key === 'Enter') getData();
   }
 
-
-  // ------------------------------
   const dispatch = useDispatch()
   const {data} = useSelector((state) => state.weatherApp)
 
@@ -22,17 +20,16 @@ const Weather = () => {
     getData()
   }, [])
 
- 
-  
+
   const getData = ()=>{
     dispatch(getWeather(locations))
   }
-  // -------------------
+ 
 
 
 return(
-  <div className='App'>
-      <div className="search">
+  <div className={classes.App}>
+      <div className={classes.search}>
         <Input
           onKeyDown={handlerOnKayDown} 
           value={locations}
@@ -46,12 +43,11 @@ return(
           btnColor={'#39A2DB'}
         />
       </div>
-      <div className="app_data">
+      <div className={classes.app_data}>
 
         <h2>{data?.name}</h2>
         <p>
           <Icon
-          className={classes.span_x}
           icon='termostat'
           color='red'
           sire={24}

@@ -1,9 +1,10 @@
 import React from 'react';
 import Icon from './Icon';
 import Text from './Text';
-import {deleteToDo} from '../pages/to-do-list/reducer'
+import {deleteToDo} from '../pages/to-do-list/reducer';
+import classes from '../styles/List.module.css'
 
-const List = ({state,dispatch,classes,}) => {
+const List = ({state,dispatch}) => {
 
   const deletePost = (e)=>{
 
@@ -18,7 +19,7 @@ const List = ({state,dispatch,classes,}) => {
           return  <div className={classes.post_item} key={index}>
             <div>{post.id}. {post.text}</div>
               <Icon
-                className={classes.span_x}
+                className={classes.dlete_icon}
                 id={post.id}
                 onClick={e=>deletePost(e)} 
                 icon='clear'
