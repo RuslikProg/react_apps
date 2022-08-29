@@ -7,8 +7,6 @@ export const store = configureStore({
       weatherApp: weatherSlice,
       toDo: toDoSlice,
 
-
-      
   },
 })
 

@@ -26,7 +26,6 @@ const Weather = () => {
   }
  
 
-
 return(
   <div className={classes.App}>
       <div className={classes.search}>

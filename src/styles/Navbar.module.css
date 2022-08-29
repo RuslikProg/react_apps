@@ -1,0 +1,36 @@
+
+  nav.nav{
+    width: 40%;
+    margin: 0 auto 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #39A2DB;
+    border-radius: 2rem;
+
+  }
+  nav.nav a{
+    width: 50%;
+    padding: 1rem;
+    list-style: none;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.7s;
+    border-bottom-left-radius: 2rem;
+    border-top-left-radius: 2rem;
+  }
+  nav.nav a:nth-child(2) {
+    border-radius: 0;
+    border-bottom-right-radius: 2rem;
+    border-top-right-radius: 2rem;
+  }
+  nav.nav a:hover {
+    background: rgba(50, 224, 196, 0.15);
+  }
+  nav.nav a.active {
+    background: #06354e;
+    font-weight: bold;
+    text-decoration: none;
+    color: aliceblue;
+  }
+  
