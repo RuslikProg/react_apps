@@ -1,6 +1,5 @@
 import {createAsyncThunk} from '@reduxjs/toolkit';
 
-
  export const getWeather = createAsyncThunk(
   //action type string
   'weatherApp/getWeather',

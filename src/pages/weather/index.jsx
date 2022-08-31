@@ -4,7 +4,7 @@ import Input from '../../components/Input';
 import classes from '../../styles/Weather.module.css';
 import Icon from '../../components/Icon'
 import { useDispatch, useSelector } from 'react-redux';
-import {getWeather} from './weatherThunk'
+import {getWeather} from './weatherThunk';
 
 const Weather = () => {
   const [locations, setLocations] = useState('vyshneve');

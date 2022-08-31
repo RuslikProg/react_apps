@@ -6,6 +6,10 @@ export const category = [
   {
     link: '/weather',
     label: 'Weather App'
+  },
+  {
+    link: '/dashboard',
+    label: 'Cryptocurrency App'
   }
 ]
 

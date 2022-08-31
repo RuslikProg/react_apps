@@ -7,6 +7,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 
 
+
 const ToDo = () => {
   const dispatch = useDispatch();
   const state= useSelector(state => state);
@@ -28,8 +29,9 @@ const ToDo = () => {
           dispatch={dispatch}
           classes={classes}
         />
+        
       </div>
-      
+
     </div>
   );
 }
