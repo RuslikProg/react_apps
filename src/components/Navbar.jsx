@@ -14,9 +14,9 @@ const Navbar = () => {
       <NavLink className={navLinkStyles} to={item.link} key={index}>
       {item.label}
       </NavLink>
-    ))}
+    ))};
     </nav>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

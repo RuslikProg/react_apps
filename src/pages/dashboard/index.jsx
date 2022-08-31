@@ -5,7 +5,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import {getCrypto} from './dashboardThunk';
 import { useTable, useSortBy } from 'react-table';
 
-
 function Table({columns,data}){
 
   const {
@@ -20,8 +19,8 @@ function Table({columns,data}){
       data,
     },
     useSortBy
-  )
-  const firstPageRows = rows.slice(0, 15)
+  );
+  const firstPageRows = rows.slice(0, 15);
 
   return(
     <>
@@ -53,7 +52,6 @@ function Table({columns,data}){
       <tbody {...getTableBodyProps()}>
         {firstPageRows.map(
           (row, i) => {
-            
             prepareRow(row);
             return (
               <tr {...row.getRowProps()}>
@@ -75,10 +73,10 @@ function Table({columns,data}){
       </tbody>
     </table>
     <br />
-    
   </>
-  )
-}
+  );
+};
+
 const Dashboard = () => {
 
   const columns = React.useMemo(()=>([  
@@ -131,7 +129,7 @@ const Dashboard = () => {
     },
 ]),
     []
-)
+);
   const [crypto, setCrypto] = useState('');
   const [formData, setFormData] = useState([]);
   const dispatch = useDispatch();
@@ -174,4 +172,4 @@ const Dashboard = () => {
   )
 }
 
-export default Dashboard
+export default Dashboard;

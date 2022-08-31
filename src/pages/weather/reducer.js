@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import {getWeather} from './weatherThunk'
+import {getWeather} from './weatherThunk';
 
 
 
@@ -27,4 +27,4 @@ export const weatherSlice = createSlice({
 });
 
 
-export default weatherSlice.reducer
+export default weatherSlice.reducer;

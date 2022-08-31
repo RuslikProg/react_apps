@@ -4,8 +4,8 @@ const key = 'toDoList';
 const initialState = {
   input: '',
   data: JSON.parse(localStorage.getItem(key)) || [],
-
 };
+
 export const toDoSlice = createSlice({
   name: 'toDo',
   initialState: initialState,
@@ -33,10 +33,9 @@ export const toDoSlice = createSlice({
         data: [...state.data.filter( item => item.id !== action.payload)]
       }
     }
-
   },
 });
 
 
 export const { changeInput, deleteToDo, addToDo  } = toDoSlice.actions;
-export default toDoSlice.reducer
+export default toDoSlice.reducer;

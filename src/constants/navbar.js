@@ -11,6 +11,6 @@ export const category = [
     link: '/dashboard',
     label: 'Cryptocurrency App'
   }
-]
+];
 
 

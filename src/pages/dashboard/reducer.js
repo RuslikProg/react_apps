@@ -1,13 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
 import {getCrypto} from './dashboardThunk';
 
-
-
 const initialState = {
   data: [],
   loading: false,
 };
-
 
 export const dashboardSlice = createSlice({
   name: 'dashboardApp',
@@ -26,5 +23,4 @@ export const dashboardSlice = createSlice({
   },},
 });
 
-
-export default dashboardSlice.reducer
+export default dashboardSlice.reducer;

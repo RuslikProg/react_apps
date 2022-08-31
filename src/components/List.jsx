@@ -7,14 +7,13 @@ import classes from '../styles/List.module.css'
 const List = ({state,dispatch}) => {
 
   const deletePost = (e)=>{
-
-    dispatch(deleteToDo(+e.target.id))
-
+    dispatch(deleteToDo(+e.target.id));
   }
 
   return (
-    <div>
-      {!!state.toDo.data.length ? <div  className={classes.posts_wraper} >
+  <div>
+    {!!state.toDo.data.length ? 
+      <div  className={classes.posts_wraper} >
         {state.toDo.data.map((post, index)=>{
           return  <div className={classes.post_item} key={index}>
             <div>{post.id}. {post.text}</div>
@@ -27,12 +26,12 @@ const List = ({state,dispatch}) => {
                 sire={24}
               />
             </div>})}  
-    </div> 
-          :
-          <Text text={'No toDo now'}/>
-          }
-    </div>
-  )
-}
+      </div> 
+      :
+      <Text text={'No toDo now'}/>
+    }
+  </div>
+  );
+};
 
 export default List;

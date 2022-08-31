@@ -62,7 +62,6 @@ const Button = (props) => {
     margin : '0 auto'
   };
 
-
   let btnStyle;
   switch (type) {
     case 'rounded':
@@ -82,16 +81,16 @@ const Button = (props) => {
           btnStyle = outlineHoverStyle;
         }else{
           btnStyle = outlineStyles;
-        }
+        };
       break;
   
       default:
       btnStyle = {
         backgroundColor : btnColor,
         color : labelColor || 'white',
-      }
+      };
       break;
-  }
+  };
  
   if(icon){
     return (
@@ -110,14 +109,11 @@ const Button = (props) => {
             :
             {...commonStyles, ...btnStyle, ...style}
         }
-        
       >
-        <Icon
-
-        />
+        <Icon/>
         {children || label}
       </button>
-    )
+    );
   }else{
     return (
       <button
@@ -135,19 +131,16 @@ const Button = (props) => {
             :
             {...commonStyles, ...btnStyle, ...style}
         }
-        
       >
         {children || label}
       </button>
-    )
-  }
-
-}
-
+    );
+  };
+};
 
 Button.defaultProps = {
   label:'Button'
-}
+};
 
 Button.propTypes = {
   type: propTypes.string,

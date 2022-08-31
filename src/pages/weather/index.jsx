@@ -13,19 +13,17 @@ const Weather = () => {
     if(e.key === 'Enter') getData();
   }
 
-  const dispatch = useDispatch()
-  const {data} = useSelector((state) => state.weatherApp)
+  const dispatch = useDispatch();
+  const {data} = useSelector((state) => state.weatherApp);
 
   useEffect(() => {
     getData()
-  }, [])
-
+  }, []);
 
   const getData = ()=>{
     dispatch(getWeather(locations))
-  }
+  };
  
-
 return(
   <div className={classes.App}>
       <div className={classes.search}>
@@ -43,7 +41,6 @@ return(
         />
       </div>
       <div className={classes.app_data}>
-
         <h2>{data?.name}</h2>
         <p>
           <Icon
@@ -56,7 +53,6 @@ return(
         </p>
         <p>
         <Icon
-          
           icon='drop'
           color='blue'
           sire={24}
@@ -76,7 +72,6 @@ return(
         </p>
         <p>
         <Icon
-          
           icon='sunny'
           color='ellow'
           sire={24}
@@ -93,7 +88,7 @@ return(
         </p>
       </div>
   </div>
-)
-}
+);
+};
 
 export default Weather;

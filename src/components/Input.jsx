@@ -21,12 +21,12 @@ const Input = (props) => {
       className={styles.inp}
       type={type} 
     />
-  )
-}
+  );
+};
 
 Input.defaultProps = {
   placeholder: 'Insert the value',
-}
+};
 
 Input.propTypes = {
   placeholder: propTypes.string,
@@ -35,5 +35,5 @@ Input.propTypes = {
   value: propTypes.string,
   onKeyDown: propTypes.func,
   type: propTypes.string,
-}
+};
 export default Input;

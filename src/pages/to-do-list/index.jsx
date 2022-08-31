@@ -10,7 +10,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 const ToDo = () => {
   const dispatch = useDispatch();
-  const state= useSelector(state => state);
+  const state = useSelector(state => state);
 
   return (
     <div className={classes.App} style={{textAlign:'center'}}>
@@ -29,11 +29,9 @@ const ToDo = () => {
           dispatch={dispatch}
           classes={classes}
         />
-        
       </div>
-
     </div>
   );
-}
+};
 
 export default (ToDo);

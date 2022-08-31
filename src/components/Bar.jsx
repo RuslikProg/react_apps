@@ -12,17 +12,16 @@ const Bar = () => {
     dispatch(addToDo({
       id: state.toDo.data.length + 1,
       text: state.toDo.input,
-    }))
-     
-};
+    }))  
+  };
 
   const handlerOnKayDown = (e)=>{
     if(e.key === 'Enter') handleSubmit();
-  }
+  };
 
   const handlerChangeInput = (e)=>{
     dispatch(changeInput(e.target.value))
-  }
+  };
  
   return (
     <div >
@@ -41,7 +40,7 @@ const Bar = () => {
         
       />
     </div>
-  )
-}
+  );
+};
 
-export default Bar 
+export default Bar; 

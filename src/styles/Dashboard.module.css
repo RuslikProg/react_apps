@@ -11,23 +11,24 @@
   font-size: 16px;
   background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
 }
+
 h1{
   color: forestgreen;
 }
 
 table{
-  
   margin: 5px;
   width: 90%;
   border-collapse: separate;
 }
+
 thead{
-  
   background-color: rgb(44, 44, 44);
   color: white;
   text-align: right;
 }
-thead>tr{
+
+thead > tr{
   text-align: center;
   height: 2em;
 }
@@ -35,24 +36,27 @@ thead>tr{
 td{
   align-items: center;
 }
+
 tbody > tr{
   margin: 5px;  
   text-align: right;
 }
+
 .rank{
   text-align: center;
   font-weight: bold;
 }
+
 .wrapSymbol{
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 5%;
 }
+
 .symbol{
   text-align: center;
 }
-
 
 .input_form{
   justify-content: center;
