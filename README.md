@@ -4,4 +4,4 @@ In the project directory, you can run:
 
 ### `npm start`
 
-This is app includes simple Weather/ToDo tubs
+This is app includes simple Weather/ToDo/Currency Dashboard
